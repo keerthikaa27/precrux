@@ -1,4 +1,4 @@
-import { otpStore } from "../send-otp/route";
+import { otpStore } from "@/lib/otpStore";
 
 export async function POST(req: Request) {
   const { email, code } = await req.json();

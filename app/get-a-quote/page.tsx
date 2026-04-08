@@ -113,8 +113,7 @@ export default function GetAQuotePage() {
     <>
       <section className="relative">
 
-        {/* 🔥 BACKGROUND SPLIT */}
-        {/* 🔥 BACKGROUND SPLIT */}
+        {/*BACKGROUND SPLIT */}
         <div className="absolute inset-0 -z-10 
     bg-[linear-gradient(to_bottom,#0f1117_70%,white_30%)]" />
 <div className="absolute top-0 left-0 right-0 h-[45%] md:h-[70%] -z-10 bg-[#0f1117] overflow-hidden">          <img
@@ -131,8 +130,10 @@ export default function GetAQuotePage() {
   transform: "translate(-50%, -50%) rotate(-18deg)",
 
   objectFit: "contain",
-  opacity: window.innerWidth < 768 ? 0.06 : 0.18, // 🔥 mobile subtle
-  filter: "brightness(0.4)",
+opacity:
+  typeof window !== "undefined" && window.innerWidth < 768
+    ? 0.06
+    : 0.18,  filter: "brightness(0.4)",
   maxWidth: "none",
 }}
           />

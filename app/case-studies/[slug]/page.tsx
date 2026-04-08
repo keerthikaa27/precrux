@@ -18,6 +18,33 @@ type CaseContentBlock =
   | { type: "list"; items: string[] }
   | { type: "feature-list"; items: { title: string; text: string }[] };
 
+  function isParagraph(
+  block: CaseContentBlock
+): block is { type: "paragraph"; text: string; isNote?: boolean } {
+  return block.type === "paragraph";
+}
+
+function isList(
+  block: CaseContentBlock
+): block is { type: "list"; items: string[] } {
+  return block.type === "list";
+}
+
+function isImage(
+  block: CaseContentBlock
+): block is { type: "image"; src: string; caption?: string } {
+  return block.type === "image";
+}
+
+function isFeatureList(
+  block: CaseContentBlock
+): block is {
+  type: "feature-list";
+  items: { title: string; text: string }[];
+} {
+  return block.type === "feature-list";
+}
+
 const caseStudies = [
     {
         title: "A Leading US-Based Golf Company",
@@ -2682,8 +2709,14 @@ function Reveal({ children, delay = 0, className = "" }: {
         </div>
     );
 }
-
-function Card({ rc }) {
+type RelatedCase = {
+  title: string;
+  category: string;
+  slug: string;
+  img: string;
+  result: string;
+};
+function Card({ rc }: { rc: RelatedCase }) {
   return (
     <Link href={`/case-studies/${rc.slug}`} className="block">
       <div className="bg-white rounded-xl p-3 shadow-sm">
@@ -2723,6 +2756,7 @@ const [animating, setAnimating] = useState(false);
 const articleRef = useRef<HTMLDivElement>(null);
 const contentEndRef = useRef<HTMLDivElement>(null);
 const [ctaTop, setCtaTop] = useState(200);
+
 
 useEffect(() => {
   if (!articleRef.current || !contentEndRef.current) return;
@@ -2826,69 +2860,88 @@ useEffect(() => {
   {cs.content.map((block, idx) => {
     switch (block.type) {
 
-      case "heading":
+      case "heading": {
+        const b = block as { type: "heading"; text: string };
         return (
           <Reveal key={idx}>
             <h2 className="text-[#0f1117] text-[1.5rem] mt-10 mb-3 font-bold">
-              {block.text}
+              {b.text}
             </h2>
           </Reveal>
         );
+      }
 
-      case "subheading":
+      case "subheading": {
+        const b = block as { type: "subheading"; text: string };
         return (
           <Reveal key={idx}>
             <p
               className="text-[#0f1117] text-[1rem] leading-[1.85] mt-6 mb-2 font-semibold"
               style={{ fontFamily: poppins.style.fontFamily }}
             >
-              {block.text}
+              {b.text}
             </p>
           </Reveal>
         );
+      }
 
       case "paragraph": {
-        // ✅ SAFE CTA CHECK (FIXED)
+        const b = block as {
+          type: "paragraph";
+          text: string;
+          isNote?: boolean;
+        };
+
         const isCTA =
-          typeof block.text === "string" &&
-          block.text.includes("Want to get the same results");
+          typeof b.text === "string" &&
+          b.text.includes("Want to get the same results");
 
         return (
           <Reveal key={idx}>
             <p
               className={`text-[#444] text-[1rem] leading-[1.85] mb-3 ${
                 isCTA ? "font-semibold text-[#0f1117]" : ""
-              } ${block.isNote ? "italic text-gray-600" : ""}`}
+              } ${b.isNote ? "italic text-gray-600" : ""}`}
             >
-              {block.text}
+              {b.text}
             </p>
           </Reveal>
         );
       }
 
-      case "image":
+      case "image": {
+        const b = block as {
+          type: "image";
+          src: string;
+          alt?: string;
+          caption?: string;
+        };
+
         return (
           <Reveal key={idx}>
             <div className="my-8 text-center">
               <img
-                src={block.src}
-                alt={("alt" in block && block.alt) ? block.alt : ""}
+                src={b.src}
+                alt={b.alt || ""}
                 className="w-full rounded-lg"
               />
-              {"caption" in block && block.caption && (
+              {b.caption && (
                 <p className="text-[0.85rem] text-gray-600 mt-2 italic">
-                  {block.caption}
+                  {b.caption}
                 </p>
               )}
             </div>
           </Reveal>
         );
+      }
 
-      case "list":
+      case "list": {
+        const b = block as { type: "list"; items: string[] };
+
         return (
           <Reveal key={idx}>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              {block.items.map((item, i) => (
+              {b.items.map((item, i) => (
                 <li key={i} className="text-[#444]">
                   {item}
                 </li>
@@ -2896,12 +2949,18 @@ useEffect(() => {
             </ul>
           </Reveal>
         );
+      }
 
-      case "feature-list":
+      case "feature-list": {
+        const b = block as {
+  type: "feature-list";
+  items: any[];
+};
+
         return (
           <Reveal key={idx}>
             <ul className="list-disc pl-6 space-y-4 mb-6">
-              {block.items.map((item, i) => (
+              {b.items.map((item, i) => (
                 <li key={i}>
                   <span className="font-semibold">{item.title}</span>
                   <p className="text-[#444] mt-1">{item.text}</p>
@@ -2910,15 +2969,19 @@ useEffect(() => {
             </ul>
           </Reveal>
         );
+      }
 
-      case "blockquote":
+      case "blockquote": {
+        const b = block as { type: "blockquote"; text: string };
+
         return (
           <Reveal key={idx}>
             <blockquote className="my-8 pl-5 italic border-l-2 border-gray-300 text-[#555]">
-              {block.text}
+              {b.text}
             </blockquote>
           </Reveal>
         );
+      }
 
       default:
         return null;

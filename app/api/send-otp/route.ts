@@ -1,8 +1,9 @@
 import { Resend } from "resend";
+import { otpStore } from "@/lib/otpStore";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Simple in-memory store (resets on server restart — fine for MVP)
-export const otpStore = new Map<string, string>();
 
 export async function POST(req: Request) {
   const { email } = await req.json();
