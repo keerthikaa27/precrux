@@ -10,7 +10,8 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL!,
-      to: process.env.RESEND_TO_EMAIL!,
+      to: [ process.env.RESEND_TO_EMAIL!,
+  "maheshwari01vaibhav@gmail.com"],
       replyTo: data.email,
       subject: `New Quote Request — ${data.services.join(", ")}`,
       html: `

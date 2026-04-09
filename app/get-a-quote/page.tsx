@@ -159,6 +159,9 @@ Get Your Growth Quote
               <Image
 src="/get-a-quote.jpeg"
 alt = "Quote"
+priority
+quality={60}
+  sizes="100vw"
               className="w-full h-full object-cover"
             />
           </div>

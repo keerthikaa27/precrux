@@ -122,6 +122,9 @@ See how we turned messy growth into predictable, compounding revenue.
 
               src="/case-studies/herosection.jpeg"
               alt = "Case-Study"
+              priority
+              quality={60}
+  sizes="100vw"
               className="w-full h-full object-cover"
             />
           </div>

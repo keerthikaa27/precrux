@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 const urbanist = Urbanist({
   subsets: ["latin"],
   variable: "--font-urbanist",
+  display: "swap",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
@@ -17,10 +18,60 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Precrux - The Growth Execution Accelerator for Ambitious Founders Worldwide",
-  description: "The Growth Execution Accelerator for Ambitious Founders Worldwide. We build high-performance growth systems that deliver predictable, compounding revenue results.",
+  metadataBase: new URL("https://precrux.com"),
+
+  title: {
+    default: "Precrux | The Growth Execution Accelerator",
+    template: "%s | Precrux",
+  },
+
+  description:
+    "Precrux helps ambitious founders scale with high-performance growth systems that drive predictable, compounding revenue.",
+
+  keywords: [
+    "growth consultancy",
+    "startup growth",
+    "scaling startups",
+    "growth systems",
+    "business consulting",
+    "founder growth strategy",
+  ],
+
+  authors: [{ name: "Precrux" }],
+  creator: "Precrux",
+
   icons: {
     icon: "/P.svg",
+  },
+
+  openGraph: {
+    title: "Precrux | The Growth Execution Accelerator",
+    description:
+      "We build high-performance growth systems that deliver predictable revenue growth.",
+    url: "https://precrux.com",
+    siteName: "Precrux",
+    images: [
+      {
+        url: "/og-image.png", 
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Precrux | Growth Execution Accelerator",
+    description:
+      "Helping founders scale with predictable growth systems.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
