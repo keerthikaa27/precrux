@@ -2,8 +2,15 @@
 import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { useState } from "react";
 
 export default function Footer() {
+
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
   const services = [
     { name: "Traction Accelerator", slug: "traction-accelerator" },
     { name: "Authority Builder", slug: "authority-builder" },
@@ -102,15 +109,50 @@ export default function Footer() {
               </h4>
 
               <div className="flex flex-col gap-3 max-w-sm mx-auto md:mx-0">
-                <input
-                  type="email"
-                  placeholder="Enter your email *"
-                  className="bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0f1117] placeholder-gray-400"
-                />
+                <div className="flex flex-col gap-3 max-w-sm mx-auto md:mx-0">
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email *"
+    className="bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#0f1117] placeholder-gray-400"
+  />
+  {email && !isValidEmail(email) && (
+  <p className="text-xs text-red-500">Please enter a valid email</p>
+)}
 
-                <button className="bg-[#0f1117] text-white font-semibold py-3 rounded-lg text-sm hover:bg-[#C8F135] hover:text-[#0f1117] transition-colors">
-                  Subscribe Now
-                </button>
+  <button
+    disabled={!isValidEmail(email) || status === "loading" || status === "success"}
+    onClick={async () => {
+      if (!isValidEmail(email)) return;
+
+      setStatus("loading");
+
+      try {
+        await fetch("/api/subscribe", {
+          method: "POST",
+          body: JSON.stringify({ email }),
+        });
+
+        setStatus("success");
+      } catch (err) {
+        console.error(err);
+        setStatus("idle");
+      }
+    }}
+    className={`font-semibold py-3 rounded-lg text-sm transition-colors ${
+      status === "success"
+        ? "bg-green-500 text-white"
+        : "bg-[#0f1117] text-white hover:bg-[#C8F135] hover:text-[#0f1117]"
+    } disabled:cursor-not-allowed`}
+  >
+    {status === "success"
+      ? "Subscribed ✓"
+      : status === "loading"
+      ? "Subscribing..."
+      : "Subscribe Now"}
+  </button>
+</div>
               </div>
             </div>
           </div>
@@ -122,7 +164,7 @@ export default function Footer() {
 
     {/* Center - Copyright */}
     <span className="block text-center">
-      Copyright © 2026 Agency All rights reserved
+      Copyright © 2026 PreCrux All rights reserved
     </span>
 
     {/* Right - Partner */}

@@ -30,6 +30,30 @@ body {
   }
 }
 
+html, body {
+  background-color: #12141D; /* or your main dark color */
+}
+
+/* Horizontal scrollbar styling */
+.scroll-visible::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-visible::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-visible::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 10px;
+}
+
+/* Firefox */
+.scroll-visible {
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd transparent;
+}
+
 body {
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   background: #fff;

@@ -339,7 +339,7 @@ const caseStudies = [
         nextCase: { title: "Daarian", slug: "daarian" },
         relatedCases: [
             { title: "Daarian", category: "SEO", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
-            { title: "Mover", category: "Local SEO", slug: "mover", img: "/case-studies/mover.png", result: "45K+ clicks and Page 1 rankings" },
+            { title: "MOVER", category: "Local SEO", slug: "mover", img: "/case-studies/mover.png", result: "45K+ clicks and Page 1 rankings" },
         ],
     },
     {
@@ -642,14 +642,14 @@ const caseStudies = [
             { label: "Timeline", value: "90 days" },
         ],
         prevCase: { title: "A Leading US-Based Golf Company", slug: "the-net-return" },
-        nextCase: { title: "Mover", slug: "mover" },
+        nextCase: { title: "MOVER", slug: "mover" },
         relatedCases: [
-            { title: "BIdet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
-            { title: "Mover", category: "Local SEO", slug: "mover", img: "/case-studies/mover.png", result: "45K+ clicks and Page 1 rankings" },
+            { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
+            { title: "MOVER", category: "Local SEO", slug: "mover", img: "/case-studies/mover.png", result: "45K+ clicks and Page 1 rankings" },
         ],
     },
     {
-        title: "Mover",
+        title: "MOVER",
         category: "Local SEO",
         tags: ["Local SEO", "Content Systems", "India"],
         slug: "mover",
@@ -926,14 +926,14 @@ const caseStudies = [
             { label: "Timeline", value: "90 Days" },
         ],
         prevCase: { title: "Daarian", slug: "daarian" },
-        nextCase: { title: "BIdet Australia", slug: "bidet" },
+        nextCase: { title: "Bidet Australia", slug: "bidet" },
         relatedCases: [
             { title: "Daarian", category: "SEO ", slug: "daarian", img: "/case-studies/daarian.png", result: "80K+ clicks and 3M+ impressions" },
-            { title: "BIdet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
+            { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
     {
-        title: "BIdet Australia",
+        title: "Bidet Australia",
         category: "Paid Growth",
         tags: ["Paid Growth", "Ecommerce",  "Australia"],
         slug: "bidet",
@@ -1286,7 +1286,7 @@ const caseStudies = [
             { label: "Budget Allocation", value: "Clearer" },
             { label: "Monthly Stack Cost", value: "6 Months" },
         ],
-        prevCase: { title: "Mover", slug: "mover" },
+        prevCase: { title: "MOVER", slug: "mover" },
         nextCase: {title: "Renowned chef & gourmet food brand", slug: "chef-gourmet"},
         relatedCases: [
             { title: "A Leading US-Based Golf Company ", category: "SEO", slug: "the-net-return", img: "/case-studies/the-net-return.jpg", result: "80K+ clicks and 3M+ impressions" },
@@ -1652,10 +1652,10 @@ const caseStudies = [
             { label: "Purchase Intent", value: "Stronger" },
             { label: "Timeline", value: "6 months" },
         ],
-        prevCase: { title: "BIdet Australia", slug: "bidet" },
+        prevCase: { title: "Bidet Australia", slug: "bidet" },
         nextCase: { title: "Gut health wellness brand", slug: "health-wellness" },
         relatedCases: [
-            { title: "BIdet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
+            { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
             { title: "Gut health wellness brand", category: "Paid Growth", slug: "health-wellness", img: "/case-studies/gut.jpeg", result: "126% ROI increase + stronger customer acquisition" },
         ],
     },
@@ -2078,7 +2078,7 @@ const caseStudies = [
         nextCase: { title: "WizTrek", slug: "wiztrek" },
         relatedCases: [
             { title: "Daarian", category: "SEO ", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
-            { title: "BIdet Australia", category: "Paid Growth ", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
+            { title: "Bidet Australia", category: "Paid Growth ", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
     {
@@ -2380,7 +2380,7 @@ const caseStudies = [
         nextCase: { title: "AI professional headshot’s platform", slug: "ai-professional" },
         relatedCases: [
             { title: "Daarian", category: "SEO", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
-            { title: "BIdet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
+            { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
     {
@@ -2668,7 +2668,7 @@ const caseStudies = [
         nextCase: null,
         relatedCases: [
             { title: "Daarian", category: "SEO", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
-            { title: "BIdet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
+            { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
     

@@ -21,7 +21,7 @@ const reviews = [
   {
     rating: 4.7,
     text: "We were struggling to rank for our core keywords despite working with multiple agencies. Precrux delivered #1 rankings across almost all of them within months. Their technical SEO systems completely changed our visibility in the fashion startup accelerator space.",
-    name: "Dr. Debasis Chakraborty.",
+    name: "Dr. Debasis Chakraborty",
     role: "Founder & CEO, Dariaan",
     img: "reviews/daarian.png",
   },
@@ -42,7 +42,7 @@ const reviews = [
   {
     rating: 5.0,
     text: "Precrux took our messy website and gave it a complete professional revamp. They introduced us to proper SEO, built strong content and blog systems from scratch, and our social media presence grew significantly. The results were fast and very noticeable.",
-    name: "Madhu",
+    name: "Madhu Kargunda",
     role: "Founder, Tengin",
     img: "reviews/tengin.webp",
   },

@@ -8,8 +8,8 @@ import Image from "next/image";
 const projects = [
   { title: "A Leading US-Based Golf Company", slug: "the-net-return", tags: ["SEO", "DTC", "US"], img: "/case-studies/the-net-return.jpg", result: "SEO + Content Systems · 80K+ clicks · 3M+ impressions" },
   { title: "Daarian", slug: "daarian", tags: ["SEO","Fashion", "India"], img: "/case-studies/daarian.png", result: "SEO Execution · Ranked #1 for core keywords in under 90 days" },
-  { title: "Mover", slug: "mover", tags: [ "Local SEO", "Content Systems", "India"], img: "/case-studies/mover.png", result: "SEO + Content Systems · 45K+ clicks · Page 1 rankings" },
-  { title: "BIdet Australia", slug: "bidet", tags: ["Paid Growth", "Ecommerce","Australia"], img: "/case-studies/bidet.png", result: "Paid Attribution · Media Strategy · ROAS improved to 4.25x" },
+  { title: "MOVER", slug: "mover", tags: [ "Local SEO", "Content Systems", "India"], img: "/case-studies/mover.png", result: "SEO + Content Systems · 45K+ clicks · Page 1 rankings" },
+  { title: "Bidet Australia", slug: "bidet", tags: ["Paid Growth", "Ecommerce","Australia"], img: "/case-studies/bidet.png", result: "Paid Attribution · Media Strategy · ROAS improved to 4.25x" },
 { title: "Renowned Chef & Gourmet Food Brand", slug: "chef-gourmet", tags: ["Paid Growth ", "SEO", "Food Brand"], img: "/case-studies/chef.jpeg", result: "Paid growth + SEO · 86% Organic growth · Stronger Purchase Intent" },
   { title: "Gut Health Wellness Brand", slug: "health-wellness", tags: ["Paid Growth", "Wellness", "Ecommerce"], img: "/case-studies/gut.jpeg", result: "Paid Growth · 126% ROI increase · Stronger Customer Acquisition" },
   { title: "WizTrek", slug: "wiztrek", tags: ["SEO", "Website Overhaul", "Lead Growth"], img: "/case-studies/wiztrek.jpeg", result: "SEO + Website Overhaul · Improved search visibility and major lead growth" },
@@ -122,6 +122,7 @@ See how we turned messy growth into predictable, compounding revenue.
 
               src="/case-studies/herosection.jpeg"
               alt = "Case-Study"
+              fill
               priority
               quality={60}
   sizes="100vw"

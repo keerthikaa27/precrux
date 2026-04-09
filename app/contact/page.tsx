@@ -295,7 +295,7 @@ export default function ContactPage() {
                     <button
                       onClick={handleSendMessage}
                       disabled={isSubmitting}
-                      className={`btn-primary w-full text-center text-base ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+                      className={`btn-primary w-46 text-center text-base ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>

@@ -1,4 +1,4 @@
-const logos = ["Mover", "BOXnMOVE", "Dariaan", "MohByMeera", "Ostori", "WizTrek", "ProfileMagic", "Serplux", "Conor", "Bidet Australia", "Mover", "BOXnMOVE", "Dariaan", "MohByMeera", "Ostori", "WizTrek", "ProfileMagic", "Serplux", "Conor", "Bidet Australia"];
+const logos = ["MOVER", "BOXnMOVE", "Dariaan", "Moh By Meera", "Ostori", "WizTrek", "ProfileMagic", "Serplux", "Conor", "Bidet Australia", "MOVER", "BOXnMOVE", "Dariaan", "Moh By Meera", "Ostori", "WizTrek", "ProfileMagic", "Serplux", "Conor", "Bidet Australia"];
 const duplicatedLogos = [...logos, ...logos];
 export default function LogoMarquee() {
   return (

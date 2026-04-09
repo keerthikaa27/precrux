@@ -18,13 +18,13 @@ const works = [
     img: "/case-studies/daarian.png",
   },
   {
-    title: "Mover",
+    title: "MOVER",
     tags: ["Local SEO + Content", "Page 1 Ranking", "45K+ Clicks"],
     slug: "mover",
     img: "/case-studies/mover.png",
   },
   {
-    title: "BIdet Australia",
+    title: "Bidet Australia",
     tags: ["4.25× ROAS", "Strong Organic Growth + Website Revamp"],
     slug: "bidet",
     img: "/case-studies/bidet.png",

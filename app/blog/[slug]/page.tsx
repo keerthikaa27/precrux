@@ -1584,7 +1584,7 @@ useEffect(() => {
                     {/* IMAGE */}
                     <Reveal delay={120}>
                         <div className="w-full rounded-lg overflow-hidden mb-12" style={{ aspectRatio: "16/9" }}>
-                            <img src={post.img} alt={post.title} className="w-full h-full object-cover" />
+                            <img src={post.img} alt={post.title} className="w-full h-full object-contain" />
                         </div>
                     </Reveal>
 
@@ -1598,7 +1598,7 @@ useEffect(() => {
         <img
           src={block.src}
           alt={block.alt || "Blog image"}
-          className="w-full rounded-lg object-cover"
+          className="w-full rounded-lg object-contain"
         />
 
         {block.caption && (
@@ -1784,7 +1784,7 @@ if (block.type === "feature-list") {
           <img
             src={rp.img}
             alt={rp.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
           />
         </div>
         <h3 className="text-[#0f1117] text-[1rem] leading-snug mb-2 group-hover:underline">
@@ -1813,7 +1813,7 @@ if (block.type === "feature-list") {
             <img
               src={post.relatedPosts[index].img}
               alt={post.relatedPosts[index].title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -1841,7 +1841,7 @@ if (block.type === "feature-list") {
             <img
               src={post.relatedPosts[nextIndex].img}
               alt={post.relatedPosts[nextIndex].title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 

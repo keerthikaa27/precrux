@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 
 const stats = [
-  { num: 50, suffix: "+", label: "Growth Systems Successfully Delivered", icon: "⏱" },
-  { num: 4.8, suffix: "×", label: "Average Traffic Growth", icon: "◈" },
-  { num: 3.6, suffix: "×", label: "Average Revenue Impact Unlocked", icon: "◆" },
+  { num: 50, suffix: "+", label: "Growth Systems Successfully Delivered", icon: "growth" },
+  { num: 4.8, suffix: "×", label: "Average Traffic Growth", icon: "traffic" },
+  { num: 3.6, suffix: "×", label: "Average Revenue Impact Unlocked", icon: "revenue" },
 ];
 
 function RollingNumber({ target, suffix }: { target: number; suffix: string }) {
@@ -52,25 +52,135 @@ if (step >= steps) { setDisplay(target); setDone(true); clearInterval(timer); }
   );
 }
 
-function StatIcon({ type }: { type: string }) {
-  if (type === "⏱") return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <circle cx="14" cy="15" r="10" stroke="#0f1117" strokeWidth="1.5" fill="none"/>
-      <path d="M14 9v6l4 2" stroke="#0f1117" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M11 3h6M14 3v2" stroke="#0f1117" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
-  );
-  if (type === "◈") return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <path d="M14 3L25 14L14 25L3 14L14 3Z" stroke="#0f1117" strokeWidth="1.5" fill="none"/>
-      <path d="M14 8L20 14L14 20L8 14L14 8Z" fill="#0f1117"/>
-    </svg>
-  );
+function GrowthIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <path d="M14 2v24M2 14h24M5.5 5.5l17 17M22.5 5.5l-17 17" stroke="#0f1117" strokeWidth="1.5" strokeLinecap="round"/>
+    <svg 
+      viewBox="0 0 24 24" 
+      className="w-10 h-10 md:w-16 md:h-16"
+      fill="none"
+    >
+      {/* Hand/Palm base - adjusted for better shape and separation */}
+      <path
+        d="M3 17H12.5C15 17 16.8 15.5 18 13.8"
+        stroke="#36454F"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Thumb */}
+      <path
+        d="M12.5 17C14 17 15.5 15.5 16.8 13.8"
+        stroke="#36454F"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Wrist - slightly thicker and cleaner */}
+      <path
+        d="M3 17V14.5"
+        stroke="#36454F"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+
+      {/* Badge Circle - increased size slightly for better balance */}
+      <circle
+        cx="12"
+        cy="7.8"
+        r="5"
+        stroke="#36454F"
+        strokeWidth="1"
+        fill="#FFFFFF"   // Dark fill to eliminate any black overlap/bleed
+      />
+
+      {/* Check mark inside badge */}
+      <path
+        d="M9.8 7.8 L11.8 9.8 L15.2 6"
+        stroke="#36454F"      // Dark check on light background? Wait — no:
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
+}
+function TrafficIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-10 h-10 md:w-14 md:h-14">
+      
+      {/* Base */}
+      <path d="M3 20H21" stroke="#36454F" strokeWidth="2" strokeLinecap="round"/>
+
+      {/* Bars */}
+      <rect x="5" y="14" width="1" height="6" rx="0.7" fill="#36454F"/>
+      <rect x="9" y="11" width="1" height="9" rx="0.7" fill="#36454F"/>
+      <rect x="13" y="8" width="1" height="12" rx="0.7" fill="#36454F"/>
+      <rect x="17" y="5" width="1" height="15" rx="0.7" fill="#36454F"/>
+
+      {/* Growth curve (CLEARLY ABOVE bars) */}
+      <path
+        d="M4 12C8 9.5 12 7 20 3"
+        stroke="#36454F"
+        strokeWidth="1"
+        strokeLinecap="round"
+        fill="none"
+      />
+
+      {/* Arrow (floating, not touching) */}
+      <path
+        d="M20 3H17M20 3V6"
+        stroke="#36454F"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+function RevenueIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-10 h-10 md:w-14 md:h-14">
+      
+      {/* LEFT STACK */}
+      <ellipse cx="6" cy="16.5" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+      <ellipse cx="6" cy="14.0" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+
+      {/* MIDDLE STACK */}
+      <ellipse cx="12" cy="16.5" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+      <ellipse cx="12" cy="14.0" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+      <ellipse cx="12" cy="11.5" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+
+      {/* RIGHT STACK */}
+      <ellipse cx="18" cy="16.5" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+      <ellipse cx="18" cy="14.0" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+      <ellipse cx="18" cy="11.5" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+      <ellipse cx="18" cy="9.0" rx="2.2" ry="1.1" stroke="#36454F" strokeWidth="1.1" fill="white"/>
+
+      {/* Growth line — ABOVE stacks */}
+      <path
+        d="M4 8.5L10 6.5L14 7.7L20 3.5"
+        stroke="#36454F"
+        strokeWidth="1.1"
+        strokeLinecap="round"
+        fill="none"
+      />
+
+      {/* Arrow */}
+      <path
+        d="M20 3.5H17M20 3.5V6.5"
+        stroke="#36454F"
+        strokeWidth="1.1"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function StatIcon({ type }: { type: string }) {
+  if (type === "growth") return <GrowthIcon />;
+  if (type === "traffic") return <TrafficIcon />;
+  return <RevenueIcon />;
 }
 
 function StatCard({ stat, delay }: { stat: typeof stats[0]; delay: number }) {
@@ -89,21 +199,16 @@ function StatCard({ stat, delay }: { stat: typeof stats[0]; delay: number }) {
         }}
       >
         {/* 2. Top Row: Icon and Number side-by-side */}
-        <div className="flex items-center gap-5 mb-3">
-          <div
-            className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 bg-gray-100 border border-gray-200"
-            style={{
-              transform: hovered ? "rotate(8deg) scale(1.08)" : "rotate(0deg) scale(1)",
-              transition: "transform 0.3s ease",
-            }}
-          >
-            <StatIcon type={stat.icon} />
-          </div>
+        <div className="flex items-center gap-3 mb-2">
+  <div className="shrink-0">
+    <StatIcon type={stat.icon} />
+  </div>
 
-          <div className="flex items-end">
-            <RollingNumber target={stat.num} suffix={stat.suffix} />
-          </div>
-        </div>
+  {/* LOCK WIDTH → no jitter */}
+  <div className="min-w-[100px] flex items-center">
+    <RollingNumber target={stat.num} suffix={stat.suffix} />
+  </div>
+</div>
 
         {/* 3. Bottom Row: Label centered under the combined width above */}
         <p className="text-[#0f1117] text-sm text-center max-w-[180px] leading-snug">
@@ -157,7 +262,7 @@ Operator-Led Growth Systems Built for Founder-Led Brands Ready to Scale.
     <div className="border-t border-[#080808] pt-12">
       
       {/* Spread items across */}
-      <div className="flex flex-wrap justify-center md:justify-between gap-y-10">
+      <div className="hidden md:flex flex-wrap justify-center md:justify-between gap-y-10">
   {stats.map((stat, i) => (
     <div
       key={stat.label}
@@ -166,6 +271,22 @@ Operator-Led Growth Systems Built for Founder-Led Brands Ready to Scale.
       <StatCard stat={stat} delay={i * 150} />
     </div>
   ))}
+</div>
+
+<div className="md:hidden mt-10">
+  <div
+    className="flex overflow-x-scroll snap-x snap-mandatory px-4 gap-5 pb-7"
+    style={{ WebkitOverflowScrolling: "touch" }}
+  >
+    {stats.map((stat, i) => (
+      <div
+        key={stat.label}
+        className="snap-start shrink-0 w-[48%] flex justify-center"
+      >
+        <StatCard stat={stat} delay={i * 150} />
+      </div>
+    ))}
+  </div>
 </div>
 
     </div>

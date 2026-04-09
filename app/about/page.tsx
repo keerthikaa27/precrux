@@ -216,7 +216,7 @@ export default function AboutPage() {
       }}
     >
       <img
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80"
+        src="/about1.jpeg"
         alt="Team"
         className="w-full h-full object-cover"
       />
@@ -238,7 +238,7 @@ export default function AboutPage() {
       }}
     >
       <img
-        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=80"
+        src="/about2.jpeg"
         alt="Team"
         className="w-full h-full object-cover"
       />
@@ -485,7 +485,7 @@ Today, we’re the team that helps DTC, Shopify, and founder-led brands move fro
     <div className="team-member-group">
 
       {/* Card */}
-      <div className="team-card-wrap cursor-pointer" style={{ height: "480px" }}>
+      <div className="team-card-wrap cursor-pointer" style={{ height: "380px" }}>
         <img
           src={member.img}
           alt={member.name}
