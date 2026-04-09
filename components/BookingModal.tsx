@@ -533,7 +533,7 @@ onClick={async () => {
                       <span className="font-semibold text-[#0f1117]">{selectedDayStr}</span> at the{" "}
                       <span className="font-semibold text-[#0f1117]">{booking.time}</span> slot is successful.
                       We have received your details. You&apos;ll soon receive a mail from{" "}
-                      <span className="font-semibold text-blue-500">precrux@gmail.com</span> regarding further details.
+                      <span className="font-semibold text-blue-500">info@precrux.com</span> regarding further details.
                     </p>
                     <button
                       onClick={onClose}
