@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal"; 
+import Image from "next/image";
 
 
 const faqs = [
@@ -285,8 +286,9 @@ Our Revenue Engine Process
             {/* Image */}
             <div className="lg:sticky lg:top-[100px]">
   <div className="hidden lg:block rounded-2xl overflow-hidden h-[320px] lg:h-[520px]">
-    <img
+    <Image
       src="/services/revenue-engine-2.jpeg"
+      alt="Revenue-Engine"
       className="w-full h-full object-cover"
     />
   </div>

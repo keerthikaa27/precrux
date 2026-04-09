@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import CTASection from "@/components/CTASection";
+import Image from "next/image";
+
 
 const services = ["Traction Accelerator", "Authority Builder", "Revenue Engine", "Modular Growth Systems", "Full Package", "Specific Service / Custom Module", "Not Sure – Free Diagnostic Call"];
 const timelines = ["ASAP", "1-2 months", "3-6 months", "Flexible"];
@@ -153,8 +155,10 @@ Get Your Growth Quote
 <Reveal>
         {/* IMAGE */}
         <div className="max-w-7xl mx-auto px-4 md:px-10 -mt-[140px] pb-24">
-<div className="relative w-full overflow-hidden rounded-[2rem] md:rounded-[5rem] shadow-2xl h-[300px] md:h-[600px]">            <img
-              src="/get-a-quote.jpeg"
+<div className="relative w-full overflow-hidden rounded-[2rem] md:rounded-[5rem] shadow-2xl h-[300px] md:h-[600px]">            
+              <Image
+src="/get-a-quote.jpeg"
+alt = "Quote"
               className="w-full h-full object-cover"
             />
           </div>

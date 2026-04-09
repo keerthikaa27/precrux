@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import CTASection from "@/components/CTASection";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const projects = [
@@ -116,8 +117,11 @@ See how we turned messy growth into predictable, compounding revenue.
         {/* IMAGE */}
         <Reveal>
         <div className="max-w-7xl mx-auto px-4 md:px-10 -mt-[100px] md:-mt-[140px] pb-16 md:pb-24">
-<div className="relative w-full overflow-hidden rounded-[2rem] md:rounded-[5rem] shadow-2xl h-[300px] md:h-[600px]">            <img
+<div className="relative w-full overflow-hidden rounded-[2rem] md:rounded-[5rem] shadow-2xl h-[300px] md:h-[600px]">            
+  <Image
+
               src="/case-studies/herosection.jpeg"
+              alt = "Case-Study"
               className="w-full h-full object-cover"
             />
           </div>

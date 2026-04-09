@@ -13,8 +13,14 @@ export async function POST(req: Request) {
   await resend.emails.send({
     from: process.env.RESEND_FROM_EMAIL!,
     to: email,
-    subject: "Your verification code",
-    html: `<p>Your verification code is: <strong>${code}</strong>. It expires in 10 minutes.</p>`,
+    subject: "Your PreCrux Verification Code",
+    html: `
+  <div style="font-family:sans-serif">
+    <h2>Your verification code</h2>
+    <p style="font-size:18px;"><strong>${code}</strong></p>
+    <p>This code expires in 10 minutes.</p>
+  </div>
+`,
   });
 
   return Response.json({ ok: true });

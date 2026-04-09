@@ -9,8 +9,12 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL!,
       to: process.env.RESEND_TO_EMAIL!,
+      replyTo: data.email,
       subject: `New Lead — ${data.name}`,
       html: `
+      <p style="color:#888; font-size:12px;">
+Source: Homepage | precrux.com
+</p>
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #0f1117; border-bottom: 2px solid #C8F135; padding-bottom: 10px;">
             New Lead Captured

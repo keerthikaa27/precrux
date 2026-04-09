@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal"; 
+import Image from "next/image";
 
 
 const faqs = [
@@ -116,7 +117,7 @@ export default function UIUXPage() {
               {/* 📱 Mobile Image (after heading) */}
 <div className="block lg:hidden mt-6 mb-6">
   <div className="rounded-2xl overflow-hidden h-[240px]">
-    <img
+    <Image
       src="/services/authority-builder.jpeg"
       alt="Authority Builder"
       className="w-full h-full object-cover"
