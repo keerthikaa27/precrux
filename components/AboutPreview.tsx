@@ -275,7 +275,7 @@ Operator-Led Growth Systems Built for Founder-Led Brands Ready to Scale.
 
 <div className="md:hidden mt-10">
   <div
-    className="flex overflow-x-scroll snap-x snap-mandatory px-4 gap-5 pb-7"
+    className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory px-4 gap-5 pb-7"
     style={{ WebkitOverflowScrolling: "touch" }}
   >
     {stats.map((stat, i) => (
