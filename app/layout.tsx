@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   creator: "Precrux",
 
   icons: {
-    icon: "/P.svg",
+    icon: "/favicon.png",
   },
 
   openGraph: {
