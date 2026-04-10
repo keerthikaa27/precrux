@@ -3,6 +3,7 @@ import { Urbanist, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -83,6 +84,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-HPK3L40VCZ"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HPK3L40VCZ');
+  `}
+</Script>
     <link rel="preload" as="image" href="/logoo.png" />
     <link rel="preload" as="image" href="/download.png" />
   </head>

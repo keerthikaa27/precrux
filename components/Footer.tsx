@@ -44,7 +44,7 @@ export default function Footer() {
               <div className="flex items-center gap-3 mt-5 justify-center md:justify-start">
                 {/* LinkedIn */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/precrux/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-[#0f1117] flex items-center justify-center text-white hover:bg-[#C8F135] hover:text-black transition-colors"
