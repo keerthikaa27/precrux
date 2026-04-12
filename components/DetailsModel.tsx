@@ -125,7 +125,7 @@ export default function DetailsModal({ onClose }: { onClose: () => void }) {
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className="mt-6 w-full btn-primary"
+              className="mt-6 w-50 btn-primary"
             >
               {loading ? "Submitting..." : "Continue →"}
             </button>

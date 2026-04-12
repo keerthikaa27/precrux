@@ -63,6 +63,33 @@ export default function Footer() {
                     <path d="M18.244 2H21.5l-7.59 8.67L23 22h-6.828l-5.35-6.993L4.5 22H1.24l8.122-9.27L1 2h6.914l4.84 6.38L18.244 2Zm-1.2 18h1.88L7.02 4H5.02l12.024 16Z" />
                   </svg>
                 </a>
+
+                <a
+  href="https://share.google/j9ui6LE15AnBjLTtQ"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 rounded-full flex items-center justify-center transition-all"
+  style={{
+    backgroundColor: "white",
+    border: "1px solid #d1d5db", // subtle grey border
+  }}
+  onMouseEnter={e => {
+    const el = e.currentTarget;
+    el.style.transform = "translateY(-2px)";
+    el.style.boxShadow = "0 6px 18px rgba(0,0,0,0.08)";
+  }}
+  onMouseLeave={e => {
+    const el = e.currentTarget;
+    el.style.transform = "translateY(0)";
+    el.style.boxShadow = "none";
+  }}
+>
+  <img
+    src="https://www.google.com/favicon.ico"
+    alt="Google"
+    className="w-[22px] h-[22px]"
+  />
+</a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-12 md:contents">

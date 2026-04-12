@@ -34,10 +34,31 @@ const posts = [
     img: "/blog/bidet.webp",
     slug: "bidet-dtc-brand",
   },
+    {
+    category: ["Fashion", "Fashion Accelerator"],
+    title: "The Complete Guide to Launching a Fashion Brand with the Right Fashion Startup Accelerator in India",
+    excerpt: "Launching a fashion brand in India is harder than it looks. This guide explains accelerators vs incubators vs execution partners, who needs one, and how to choose the right support for real growth.",
+    author: "Vaibhav M.",
+    authorImg: "/team/vaibhav.png", 
+    date: "April 12, 2026",
+    img: "/blog/blog4.webp",
+    slug: "fashion-brand",
+  },
+  {
+    category: ["Fashion", "Fashion Accelerator"],
+    title: "Top 7 Fashion Startup Accelerators In India: What Founders Should Know Before Choosing One (2026 Edition)",
+    excerpt: "Confused which fashion startup accelerator to join in India? This 2026 guide ranks the Top 7 options and shows why PreCrux is the smartest first choice for most founders.",
+    author: "Vaibhav M.",
+    authorImg: "/team/vaibhav.png", 
+    date: "April 12, 2026",
+    img: "/blog/blog5.webp",
+    slug: "top-7-fashion-startup-accelerators-in-India",
+  },
+  
   
 ];
 
-const categories = ["All", "SEO", "CRO ", "Performance Marketing", "Socil Media", "Organic Growth", "Email"];
+const categories = ["All", "SEO", "CRO ", "Performance Marketing", "Social Media", "Organic Growth", "Email", "Fashion", "Fashion Accelerator"];
 
 /* ── Scroll reveal hook ── */
 function useReveal() {
@@ -78,7 +99,8 @@ export default function BlogPage() {
 
   const filtered = activeCategory === "All"
     ? posts
-    : posts.filter(p => p.category === activeCategory);
+    : posts.filter(p => p.category?.includes(activeCategory)
+  );
 
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
@@ -170,16 +192,18 @@ Actionable growth execution insights, real case studies, and systems that actual
                         src={p.img}
 
                         alt={p.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div className="p-6">
                       <span
-                        className="inline-block bg-gray-100 text-black-700 text-xs px-3 py-1.5 rounded-full mb-4"
-                        style={{ fontWeight: 400 }}
-                      >
-                        {p.category}
-                      </span>
+  className="inline-block bg-gray-100 text-black-700 text-xs px-3 py-1.5 rounded-full mb-4"
+  style={{ fontWeight: 400 }}
+>
+  {Array.isArray(p.category)
+    ? p.category.join(", ")
+    : p.category}
+</span>
                       <h3
                         className="text-[#0f1117] text-xl leading-snug mb-3"
                         style={{ fontWeight: 600 }}

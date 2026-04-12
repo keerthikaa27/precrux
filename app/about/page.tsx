@@ -129,7 +129,7 @@ const team = [
     name: "Mayank Maheshwari",
     role: "Co-Founder & CEO",
     bio: "Operator-first founder who thinks in systems and executes with precision. Mayank drives revenue architecture, strategic partnerships, and growth execution across every Precrux engagement. With a background spanning performance marketing, SEO infrastructure, and brand scaling.",
-    img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+    img: "/team/founder2.jpeg",
   },
 ];
 
@@ -224,7 +224,7 @@ export default function AboutPage() {
   </div>
 
   {/* Desktop: KEEP BOTH IMAGES */}
-  <div className="hidden lg:flex items-center gap-12">
+  <div className="hidden lg:flex items-center gap-10">
 
     {/* First image */}
     <div
@@ -238,7 +238,7 @@ export default function AboutPage() {
       }}
     >
       <img
-        src="/about2.jpeg"
+        src="/aboutus/about1.jpeg"
         alt="Team"
         className="w-full h-full object-cover"
       />
@@ -256,7 +256,7 @@ export default function AboutPage() {
       }}
     >
       <img
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80"
+        src="/aboutus/about2.jpeg"
         alt="Collaboration"
         className="w-full h-full object-cover"
       />
@@ -274,30 +274,30 @@ export default function AboutPage() {
 We combine deep technical SEO, conversion rate optimization, content systems, and full revenue architectures to create the infrastructure you actually own — so your growth keeps working even after the project ends.
               </p>
 
-              <button
-                onClick={() => setShowReel(true)}
-                className="group inline-flex items-center justify-center px-10 py-4 rounded-full font-medium tracking-wide cursor-pointer border-none"
-                style={{
-                  backgroundColor: "white",
-                  color: "black",
-                  // 0.2s for the hover 'in', 0.6s delay/duration for the 'out' transition
-                  transition: "background-color 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease",
-                }}
-                onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLButtonElement;
-                  el.style.backgroundColor = "#C8F135"; // Your Neon Green
-                  el.style.transition = "background-color 0.2s ease"; // Quick snap on hover
-                  el.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLButtonElement;
-                  el.style.backgroundColor = "white";
-                  el.style.transition = "background-color 0.8s ease"; // Slow fade back to white
-                  el.style.transform = "translateY(0)";
-                }}
-              >
-                Play Showreel
-              </button>
+              <Link href="/case-studies">
+  <button
+    className="group inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold tracking-wide cursor-pointer border-none"
+    style={{
+      backgroundColor: "white",
+      color: "black",
+      transition: "background-color 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease",
+    }}
+    onMouseEnter={e => {
+      const el = e.currentTarget as HTMLButtonElement;
+      el.style.backgroundColor = "#C8F135";
+      el.style.transition = "background-color 0.2s ease";
+      el.style.transform = "translateY(-2px)";
+    }}
+    onMouseLeave={e => {
+      const el = e.currentTarget as HTMLButtonElement;
+      el.style.backgroundColor = "white";
+      el.style.transition = "background-color 0.8s ease";
+      el.style.transform = "translateY(0)";
+    }}
+  >
+    See Real Results
+  </button>
+</Link>
 
 
               {/* Decorative asterisk */}

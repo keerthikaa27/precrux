@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const projects = [
   { title: "A Leading US-Based Golf Company", slug: "the-net-return", tags: ["SEO", "DTC", "US"], img: "/case-studies/the-net-return.jpg", result: "SEO + Content Systems · 80K+ clicks · 3M+ impressions" },
-  { title: "Daarian", slug: "daarian", tags: ["SEO","Fashion", "India"], img: "/case-studies/daarian.png", result: "SEO Execution · Ranked #1 for core keywords in under 90 days" },
+  { title: "Dariaan", slug: "dariaan", tags: ["SEO","Fashion", "India"], img: "/case-studies/daarian.png", result: "SEO Execution · Ranked #1 for core keywords in under 90 days" },
   { title: "MOVER", slug: "mover", tags: [ "Local SEO", "Content Systems", "India"], img: "/case-studies/mover.png", result: "SEO + Content Systems · 45K+ clicks · Page 1 rankings" },
   { title: "Bidet Australia", slug: "bidet", tags: ["Paid Growth", "Ecommerce","Australia"], img: "/case-studies/bidet.png", result: "Paid Attribution · Media Strategy · ROAS improved to 4.25x" },
 { title: "Renowned Chef & Gourmet Food Brand", slug: "chef-gourmet", tags: ["Paid Growth ", "SEO", "Food Brand"], img: "/case-studies/chef.jpeg", result: "Paid growth + SEO · 86% Organic growth · Stronger Purchase Intent" },

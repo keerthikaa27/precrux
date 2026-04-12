@@ -94,14 +94,14 @@ export default function Navbar() {
         {/* CTA */}
         <button
           onClick={handleScheduleClick}
-className={`hidden lg:inline-flex items-center gap-2 font-normal text-sm px-5 py-2.5 rounded-full transition-colors duration-700 ease-in-out
+className={`hidden lg:inline-flex items-center gap-2 font-medium text-sm px-5 py-2.5 rounded-full transition-colors duration-700 ease-in-out
   ${
     isDetailPage
       ? "bg-[#C8F135] text-[#0f1117]"
       : "bg-white text-[#0f1117] hover:bg-[#C8F135]"
   }
 `}        >
-          Schedule a Call Now
+          Book a Meeting
         </button>
 
         {/* Mobile toggle */}

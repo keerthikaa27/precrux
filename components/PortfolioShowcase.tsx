@@ -14,7 +14,7 @@ const works = [
   {
     title: "Dariaan ",
     tags: ["#1 Rankings on Core Keywords", "High Volume Lead Generation"],
-    slug: "daarian",
+    slug: "dariaan",
     img: "/case-studies/daarian.png",
   },
   {

@@ -25,7 +25,7 @@ const services = [
   {
     num: "4", title: "Modular Growth Systems (30–90 days)",
     desc: "Pick exactly what you need — no full program required. Flexible, high-impact execution for specific gaps.",
-    slug: "modular-growth ",
+    slug: "modular-growth",
     items: ["Single-focus projects (SEO)","Minimum 30-day commitment with clear KPIs", "Same execution quality as our flagship programs"
 ],
   },

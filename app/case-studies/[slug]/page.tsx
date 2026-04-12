@@ -336,17 +336,17 @@ const caseStudies = [
             
         ],
         prevCase: null,
-        nextCase: { title: "Daarian", slug: "daarian" },
+        nextCase: { title: "Dariaan", slug: "dariaan" },
         relatedCases: [
-            { title: "Daarian", category: "SEO", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
+            { title: "Dariaan", category: "SEO", slug: "dariaan", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
             { title: "MOVER", category: "Local SEO", slug: "mover", img: "/case-studies/mover.png", result: "45K+ clicks and Page 1 rankings" },
         ],
     },
     {
-        title: "Daarian",
+        title: "Dariaan",
         category: "Brand Design",
         tags: ["SEO", "Fashion", "India"],
-        slug: "daarian",
+        slug: "dariaan",
         img: "/case-studies/daarian.png",
         result: "Ranked #1 for core keywords in under 90 days",
         content: [
@@ -925,10 +925,10 @@ const caseStudies = [
             { label: "Core Lever", value: "Local SEO" },
             { label: "Timeline", value: "90 Days" },
         ],
-        prevCase: { title: "Daarian", slug: "daarian" },
+        prevCase: { title: "Darian", slug: "dariaan" },
         nextCase: { title: "Bidet Australia", slug: "bidet" },
         relatedCases: [
-            { title: "Daarian", category: "SEO ", slug: "daarian", img: "/case-studies/daarian.png", result: "80K+ clicks and 3M+ impressions" },
+            { title: "Dariaan", category: "SEO ", slug: "dariaan", img: "/case-studies/daarian.png", result: "80K+ clicks and 3M+ impressions" },
             { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
@@ -2077,7 +2077,7 @@ const caseStudies = [
         prevCase: { title: "Renowned chef & gourmet food brand", slug: "chef-gourmet" },
         nextCase: { title: "WizTrek", slug: "wiztrek" },
         relatedCases: [
-            { title: "Daarian", category: "SEO ", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
+            { title: "Dariaan", category: "SEO ", slug: "dariaan", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
             { title: "Bidet Australia", category: "Paid Growth ", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
@@ -2379,7 +2379,7 @@ const caseStudies = [
         prevCase: { title: "Gut health wellness brand", slug: "health-wellness" },
         nextCase: { title: "AI professional headshot’s platform", slug: "ai-professional" },
         relatedCases: [
-            { title: "Daarian", category: "SEO", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
+            { title: "Dariaan", category: "SEO", slug: "dariaan", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
             { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
@@ -2667,7 +2667,7 @@ const caseStudies = [
         prevCase: { title: "WizTrek", slug: "wiztrek" },
         nextCase: null,
         relatedCases: [
-            { title: "Daarian", category: "SEO", slug: "daarian", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
+            { title: "Dariaan", category: "SEO", slug: "dariaan", img: "/case-studies/daarian.png", result: "Ranked #1 for core keywords in under 90 days" },
             { title: "Bidet Australia", category: "Paid Growth", slug: "bidet", img: "/case-studies/bidet.png", result: "ROAS improved to 4.25x" },
         ],
     },
