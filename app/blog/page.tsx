@@ -40,7 +40,7 @@ const posts = [
     excerpt: "Launching a fashion brand in India is harder than it looks. This guide explains accelerators vs incubators vs execution partners, who needs one, and how to choose the right support for real growth.",
     author: "Vaibhav M.",
     authorImg: "/team/vaibhav.png", 
-    date: "April 12, 2026",
+    date: "April 11, 2026",
     img: "/blog/blog4.webp",
     slug: "fashion-brand",
   },
@@ -97,10 +97,10 @@ export default function BlogPage() {
   const postsPerPage = 6;
 
 
-  const filtered = activeCategory === "All"
-    ? posts
-    : posts.filter(p => p.category?.includes(activeCategory)
-  );
+  const filtered = (activeCategory === "All"
+  ? posts
+  : posts.filter(p => p.category?.includes(activeCategory))
+).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;

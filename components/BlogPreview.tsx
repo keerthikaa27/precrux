@@ -57,7 +57,7 @@ function BlogCard({ p }: { p: typeof posts[0] }) {
               <img
   src={p.authorImg}
   alt={p.author}
-  className="w-6 h-6 rounded-full object-cover"
+  className="w-6 h-6 rounded-full object-contain"
 />
               {p.author}
             </span>

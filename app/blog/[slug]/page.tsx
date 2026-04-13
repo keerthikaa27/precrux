@@ -1450,7 +1450,7 @@ const posts : Post[] = [
         category: "Fashion Accelerator",
         title: "The Complete Guide to Launching a Fashion Brand with the Right Fashion Startup Accelerator in India",
         author: "Vaibhav M.",
-        date: "April 12, 2026",
+        date: "April 11, 2026",
         slug: "fashion-brand",
         img: "/blog/blog4.webp",
 content: [
