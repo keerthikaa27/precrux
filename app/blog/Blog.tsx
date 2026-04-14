@@ -55,6 +55,16 @@ const posts = [
     img: "/blog/blog5.webp",
     slug: "top-fashion-startup-accelerators-in-india",
   },
+  {
+    category: ["Fashion", "Fashion Accelerator"],
+    title: "Fashion Growth Consulting: 7 Game Changing Strategies For D2C Founders",
+    excerpt: "Most fashion brands stay busy but don’t actually grow because their systems are misaligned. This guide breaks down how positioning, conversion, retention, and authority need to work together for real D2C growth.",
+    author: "Vaibhav M.",
+    authorImg: "/team/vaibhav.png", 
+    date: "April 14, 2026",
+    img: "/blog/blog6.webp",
+    slug: "fashion-growth-consulting-d2c-founders",
+  },
   
   
 ];

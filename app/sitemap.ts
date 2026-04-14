@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "why-most-paid-campaigns-fail-attribution-model-roas",
     "launch-fashion-brand-startup-accelerator",
     "top-fashion-startup-accelerators-in-india",
+    "fashion-growth-consulting-d2c-founders",
   ]; // :contentReference[oaicite:1]{index=1}
 
   return [
