@@ -3,13 +3,43 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal"; 
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Authority Builder — SEO & Content Growth System",
+  description: "6-month SEO and content authority system for DTC brands.",
+  alternates: {
+  canonical: "https://precrux.com/services/authority-builder",
+},
+}
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Authority Builder",
+  description:
+    "6-month SEO and content authority system for DTC, Shopify, and founder-led brands to build long-term organic growth and brand authority.",
+  provider: {
+    "@type": "Organization",
+    name: "Precrux",
+    url: "https://precrux.com",
+    sameAs: [ "https://www.linkedin.com/company/precrux" ]
+  },
+  areaServed: "Global",
+  serviceType: "SEO and Content Growth System",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 
 
 const faqs = [
   {
     q: "How long does it take to see results with the Authority Builder?",
-    a: <>Most clients start seeing steady increases in organic traffic and keyword rankings within the first 8–10 weeks. By the end of the full 6 months, you usually have a strong, compounding authority engine with sustained traffic growth and improved brand visibility.</>,
+    a: "Most clients start seeing steady increases in organic traffic and keyword rankings within the first 8–10 weeks. By the end of the full 6 months, you usually have a strong, compounding authority engine with sustained traffic growth and improved brand visibility.",
   },
   {
     q: "What exactly is included in the Authority Builder program?",
@@ -37,6 +67,19 @@ a: "You receive full ownership of the entire authority system - content clusters
 a: "The easiest way is to book a Free Growth Diagnostic call. We’ll review your current traffic, content, and technical setup, then tell you honestly whether the 6-month Authority Builder is the right fit for your goals.",
 },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
 
 function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -67,6 +110,14 @@ export default function UIUXPage() {
 
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+/>
       {/* ── 1. Hero — dark, left text + right image ── */}
       <section
         className="pt-[72px] relative overflow-hidden"
@@ -117,11 +168,15 @@ export default function UIUXPage() {
               {/* 📱 Mobile Image (after heading) */}
 <div className="block lg:hidden mt-6 mb-6">
   <div className="rounded-2xl overflow-hidden h-[240px]">
-    <img
-      src="/services/authority-builder.jpeg"
-      alt="Authority Builder"
-      className="w-full h-full object-cover"
-    />
+    <Image
+  src="/services/authority-builder.jpeg"
+  alt="Authority Builder"
+  fill
+  priority
+  quality={75}
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover"
+/>
   </div>
 </div>
               <p

@@ -2,6 +2,14 @@
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useEffect, useRef, useState } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us — Precrux",
+  description: "Meet the team behind Precrux.",
+};
+
+
 
 /* ── Scroll reveal hook ── */
 function useReveal() {

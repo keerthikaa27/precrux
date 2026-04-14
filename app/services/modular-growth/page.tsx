@@ -3,12 +3,45 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal"; 
+import type { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Modular Growth Systems — Flexible SEO & Paid Execution",
+  description:
+    "Choose targeted SEO, CRO, or paid growth modules based on your needs. Precrux delivers flexible 30–90 day growth systems with clear KPIs and full ownership.",
+  alternates: {
+    canonical: "https://precrux.com/services/modular-growth-systems",
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Modular Growth Systems",
+  description:
+    "Flexible 30–90 day growth execution modules including SEO, paid campaigns, CRO, and social media systems for targeted improvements.",
+  provider: {
+    "@type": "Organization",
+    name: "Precrux",
+    url: "https://precrux.com",
+    sameAs: [
+      "https://www.linkedin.com/company/precrux"
+    ],
+  },
+  areaServed: "Global",
+  serviceType: "Flexible SEO, CRO and Paid Growth Services",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+  },
+};
 
 
 const faqs = [
   {
     q: "What exactly is Modular Growth Systems?",
-    a: <>Modular Growth Systems is a flexible, high-impact execution option where you choose only the specific growth areas you need right now - such as technical SEO, paid campaigns, CRO, social media systems, or any targeted combination - instead of committing to a full 6- or 9-month program. Each module runs as a focused 30–90 day sprint with clear KPIs and full ownership at the end.</>,
+    a: "Modular Growth Systems is a flexible, high-impact execution option where you choose only the specific growth areas you need right now - such as technical SEO, paid campaigns, CRO, social media systems, or any targeted combination - instead of committing to a full 6- or 9-month program. Each module runs as a focused 30–90 day sprint with clear KPIs and full ownership at the end.",
   },
   {
     q: "How is Modular Growth Systems different from your full programs?",
@@ -35,6 +68,19 @@ const faqs = [
     a: "The easiest way is to book a Free Growth Diagnostic call. We’ll review your current growth setup, identify the highest-leverage module for you, and tell you honestly whether Modular Growth Systems is the right fit or if one of the full programs would serve you better.",
   },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
 
 function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -65,6 +111,15 @@ export default function UIUXPage() {
 
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+/>
       {/* ── 1. Hero — dark, left text + right image ── */}
       <section
         className="pt-[72px] relative overflow-hidden"
@@ -114,11 +169,15 @@ Modular Growth Systems
               {/* 📱 Mobile Image (after heading) */}
 <div className="block lg:hidden mt-6 mb-6">
   <div className="rounded-2xl overflow-hidden h-[240px]">
-    <img
-      src="/services/modular-systems.jpeg"
-      alt="Modular Systems"
-      className="w-full h-full object-cover"
-    />
+    <Image
+  src="/services/modular-systems.jpeg"
+  alt="Modular Systems"
+  width={600}
+  height={300}
+  priority
+  sizes="100vw"
+  className="w-full h-full object-cover"
+/>
   </div>
 </div>
             

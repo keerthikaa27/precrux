@@ -9,6 +9,37 @@ import FloatingCTA from "@/components/FloatingCTA";
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["600", "700"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "600"] });
 
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+) {
+  const post = posts.find(p => p.slug === params.slug);
+
+  if (!post) {
+    return {
+      title: "Blog | Precrux",
+      description: "Precrux blog",
+    };
+  }
+
+  return {
+    title: post.seoTitle || post.title,
+    description: post.seoDescription || post.title,
+    keywords: post.keywords,
+
+    openGraph: {
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.title,
+      images: [`https://precrux.com${post.img}`],
+      url: `https://precrux.com/blog/${post.slug}`,
+      type: "article",
+    },
+
+    alternates: {
+      canonical: `https://precrux.com/blog/${post.slug}`,
+    },
+  };
+}
+
 
 type ContentBlock =
   | { type: "paragraph"; text: string }
@@ -42,6 +73,9 @@ type Post = {
   slug: string;
   img: string;
   content: ContentBlock[];
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
   prevPost: any;
   nextPost: any;
   relatedPosts: any[];
@@ -54,9 +88,16 @@ const posts : Post[] = [
     {
         category: "SEO",
         title: "How We Ranked a Fashion Accelerator #1 for Almost All Core Keywords in Under 90 Days",
+        seoTitle: "How We Ranked a Fashion Accelerator #1 in Under 90 Days",
+        seoDescription: "See how we ranked a fashion accelerator #1 for core keywords in under 90 days through sharper positioning, keyword ownership, and focused SEO execution.",
+        keywords: [
+        "fashion accelerator SEO",
+        "SEO case study",
+        "category ownership SEO"
+        ],
         author: "Vaibhav M.",
         date: "April 6, 2026",
-        slug: "fashion-accelerator",
+        slug: "ranked-fashion-accelerator-in-under-90-days",
         img: "/blog/fashion.webp",
         content: [
             {
@@ -466,19 +507,19 @@ const posts : Post[] = [
         prevPost: null,
         nextPost: {
             title: "80K+ Organic Clicks: How We Scaled a Golf DTC Brand from Messy Traffic to Millions of Impressions",
-            slug: "golf-dtc-brand",
+            slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
         },
         relatedPosts: [
             {
                 title: "80K+ Organic Clicks: How We Scaled a Golf DTC Brand from Messy Traffic to Millions of Impressions",
                 date: "April 7, 2026",
-                slug: "fashion-accelerator",
+                slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
                 img: "/blog/golf.webp",
             },
             {
                 title: "Why Most Paid Campaigns Fail - And the Attribution Model That 4.2× Our Clients’ ROAS",
                 date: "April 8, 2026",
-                slug: "bidet-dtc-brand",
+                slug: "why-most-paid-campaigns-fail-attribution-model-roas",
                 img: "/blog/bidet.webp",
             },
         ],
@@ -486,9 +527,16 @@ const posts : Post[] = [
     {
         category: "Organic Growth",
         title: "80K+ Organic Clicks: How We Scaled a Golf DTC Brand from Messy Traffic to Millions of Impressions",
+        seoTitle: "80K+ Organic Clicks: How We Scaled a US Golf DTC Brand",
+        seoDescription: "See how we helped a US-based golf DTC brand turn messy organic traffic into 80K+ clicks, 3M+ impressions, and a stronger SEO growth system.",
+        keywords: [
+        "seo case study",
+        "organic traffic growth",
+        "ecommerce seo"
+        ],
         author: "Vaibhav M.",
         date: "April 7, 2026",
-        slug: "golf-dtc-brand",
+        slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
         img: "/blog/golf.webp",
         content: [
             {
@@ -880,19 +928,19 @@ const posts : Post[] = [
         prevPost: null,
         nextPost: {
             title: "Why Most Paid Campaigns Fail - And the Attribution Model That 4.2× Our Clients’ ROAS",
-            slug: "bidet-dtc-brand",
+            slug: "why-most-paid-campaigns-fail-attribution-model-roas",
         },
         relatedPosts: [
             {
                 title: "How We Ranked a Fashion Accelerator #1 for Almost All Core Keywords in Under 90 Days",
                 date: "April 6, 2026",
-                slug: "fashion-accelerator",
+                slug: "ranked-fashion-accelerator-in-under-90-days",
                 img: "/blog/fashion.webp",
             },
             {
                 title: "Why Most Paid Campaigns Fail - And the Attribution Model That 4.2× Our Clients’ ROAS",
                 date: "April 8, 2026",
-                slug: "bidet-dtc-brand",
+                slug: "why-most-paid-campaigns-fail-attribution-model-roas",
                 img: "/blog/bidet.webp",
             },
         ],
@@ -900,9 +948,16 @@ const posts : Post[] = [
     {
         category: "Performance Marketing",
         title: "Why Most Paid Campaigns Fail - And the Attribution Model That 4.2× Our Clients’ ROAS",
+        seoTitle: "Why Most Paid Campaigns Fail: The Attribution Model That 4.2x ROAS",
+        seoDescription: "See why most paid campaigns fail, how attribution distorts ROAS, and the practical model that helped lift a client’s blended ROAS from 2.21x to 4.2x.",
+        keywords: [
+        "paid campaign attribution",
+        "blended ROAS",
+        "performance marketing case study"
+        ],
         author: "Vaibhav M.",
         date: "April 8, 2026",
-        slug: "bidet-dtc-brand",
+        slug: "why-most-paid-campaigns-fail-attribution-model-roas",
         img: "/blog/bidet.webp",
         content: [
             {
@@ -1434,13 +1489,13 @@ const posts : Post[] = [
             {
                 title: "How We Ranked a Fashion Accelerator #1 for Almost All Core Keywords in Under 90 Days",
                 date: "April 6, 2026",
-                slug: "fashion-accelerator",
+                slug: "ranked-fashion-accelerator-in-under-90-days",
                 img: "/blog/fashion.webp",
             },
             {
                 title: "80K+ Organic Clicks: How We Scaled a US-Based Golf DTC Brand from Messy Traffic to Millions of Impressions",
                 date: "April 7, 2026",
-                slug: "golf-dtc-brand",
+                slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
                 img: "/blog/golf.webp",
             },
         ],
@@ -1449,9 +1504,16 @@ const posts : Post[] = [
     {
         category: "Fashion Accelerator",
         title: "The Complete Guide to Launching a Fashion Brand with the Right Fashion Startup Accelerator in India",
+        seoTitle: "The Complete Guide to Launching a Fashion Brand in India (2026)",
+        seoDescription: "Learn how to launch a fashion brand in India and choose the right fashion startup accelerator for your stage, growth goals, and execution needs.",
+        keywords: [
+        "fashion startup accelerator in India",
+        "launching a fashion brand in India",
+        "startup accelerator for fashion brands"
+        ],
         author: "Vaibhav M.",
         date: "April 11, 2026",
-        slug: "fashion-brand",
+        slug: "launch-fashion-brand-startup-accelerator",
         img: "/blog/blog4.webp",
 content: [
 {
@@ -1993,19 +2055,19 @@ text: "A good sign is that you already have some product direction, brand seriou
         prevPost: null,
         nextPost: {
             title: "Top 7 Fashion Startup Accelerators In India: What Founders Should Know Before Choosing One (2026 Edition)",
-            slug: "top-7-fashion-startup-accelerators-in-India",
+            slug: "top-fashion-startup-accelerators-in-india",
         },
         relatedPosts: [
             {
                 title: "How We Ranked a Fashion Accelerator #1 for Almost All Core Keywords in Under 90 Days",
                 date: "April 6, 2026",
-                slug: "fashion-accelerator",
+                slug: "ranked-fashion-accelerator-in-under-90-days",
                 img: "/blog/fashion.webp",
             },
             {
                 title: "80K+ Organic Clicks: How We Scaled a US-Based Golf DTC Brand from Messy Traffic to Millions of Impressions",
                 date: "April 7, 2026",
-                slug: "golf-dtc-brand",
+                slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
                 img: "/blog/golf.webp",
             },
         ],
@@ -2014,9 +2076,16 @@ text: "A good sign is that you already have some product direction, brand seriou
     {
         category: "Fashion Accelerator",
         title: "Top 7 Fashion Startup Accelerators In India: What Founders Should Know Before Choosing One (2026 Edition)",
+        seoTitle: "Top 7 Fashion Startup Accelerators in India (2026 Guide)",
+        seoDescription: "Explore the top 7 fashion startup accelerators in India for 2026. Compare programs, founder fit, execution support, and what to know before choosing one.",
+        keywords: [
+        "fashion startup accelerators in India",
+        "fashion startup support India",
+        "best fashion accelerator India"
+        ],
         author: "Vaibhav M.",
         date: "April 12, 2026",
-        slug: "top-7-fashion-startup-accelerators-in-India",
+        slug: "top-fashion-startup-accelerators-in-india",
         img: "/blog/blog5.webp",
 content: [
 
@@ -2574,13 +2643,13 @@ text: "Because for many founders the biggest issue is not lack of advice, it is 
             {
                 title: "How We Ranked a Fashion Accelerator #1 for Almost All Core Keywords in Under 90 Days",
                 date: "April 6, 2026",
-                slug: "fashion-accelerator",
+                slug: "ranked-fashion-accelerator-in-under-90-days",
                 img: "/blog/fashion.webp",
             },
             {
                 title: "80K+ Organic Clicks: How We Scaled a US-Based Golf DTC Brand from Messy Traffic to Millions of Impressions",
                 date: "April 7, 2026",
-                slug: "golf-dtc-brand",
+                slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
                 img: "/blog/golf.webp",
             },
         ],
@@ -2645,6 +2714,31 @@ export default function BlogPostPage() {
     const slug = params?.slug as string;
 
     const post = posts.find((p) => p.slug === slug);
+    const blogSchema = post && {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.seoTitle || post.title,
+  description: post.seoDescription || post.title,
+  image: `https://precrux.com${post.img}`,
+  author: {
+    "@type": "Person",
+    name: post.author,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Precrux",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://precrux.com/logoo.png", 
+    },
+  },
+  datePublished: new Date(post.date).toISOString(),
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://precrux.com/blog/${post.slug}`,
+  },
+  keywords: post.keywords?.join(", "),
+};
  
     const [saveInfo, setSaveInfo] = useState(false);
 
@@ -2703,7 +2797,12 @@ useEffect(() => {
 
     return (
         <>
-
+        {typeof window === "undefined" && blogSchema && (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+  />
+)}
             <main className="bg-[#f4f4f4] min-h-screen pt-[110px]">
                 
                 <article ref={articleRef} className="max-w-[680px] mx-auto px-8 py-2 md:py-20 bg-white mb-16 relative">

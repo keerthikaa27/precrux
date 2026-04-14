@@ -2,6 +2,12 @@
 import { useState, useEffect, useRef } from "react";
 import CTASection from "@/components/CTASection";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Growth Blog",
+  description: "Case studies and growth strategy breakdowns.",
+};
 
 const posts = [
   {
@@ -12,7 +18,7 @@ const posts = [
     authorImg: "/team/vaibhav.png", 
     date: "April 6, 2026",
     img: "/blog/fashion.webp",
-    slug: "fashion-accelerator",
+    slug: "ranked-fashion-accelerator-in-under-90-days",
   },
   {
     category: "Organic Growth",
@@ -22,7 +28,7 @@ const posts = [
     authorImg: "/team/vaibhav.png", 
     date: "April 7, 2026",
     img: "/blog/golf.webp",
-    slug: "golf-dtc-brand",
+    slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
   },
   {
     category: "Performance Marketing",
@@ -32,7 +38,7 @@ const posts = [
     authorImg: "/team/vaibhav.png", 
     date: "April 8, 2026",
     img: "/blog/bidet.webp",
-    slug: "bidet-dtc-brand",
+    slug: "why-most-paid-campaigns-fail-attribution-model-roas",
   },
     {
     category: ["Fashion", "Fashion Accelerator"],
@@ -42,7 +48,7 @@ const posts = [
     authorImg: "/team/vaibhav.png", 
     date: "April 11, 2026",
     img: "/blog/blog4.webp",
-    slug: "fashion-brand",
+    slug: "launch-fashion-brand-startup-accelerator",
   },
   {
     category: ["Fashion", "Fashion Accelerator"],
@@ -52,7 +58,7 @@ const posts = [
     authorImg: "/team/vaibhav.png", 
     date: "April 12, 2026",
     img: "/blog/blog5.webp",
-    slug: "top-7-fashion-startup-accelerators-in-India",
+    slug: "top-fashion-startup-accelerators-in-india",
   },
   
   

@@ -77,7 +77,7 @@ export default function CTASection() {
           <div className="mt-10">
             <p className="text-white/100 text-sm mb-2">Prefer Email?</p>
             <a
-              href="mailto:chris@webrocket.studio"
+              href="mailto:info@precrux.com"
               className="text-white font-semibold underline underline-offset-4 hover:text-[#C8F135] transition-colors"
             >
               info@precrux.com

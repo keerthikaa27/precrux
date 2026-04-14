@@ -2,6 +2,13 @@
 import { useEffect, useState, useRef } from "react";
 import CTASection from "@/components/CTASection";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Get a Growth Strategy Quote",
+  description:
+    "Get a custom growth plan from Precrux. We help founder-led brands scale with SEO, content, and paid growth systems.",
+};
 
 
 const services = ["Traction Accelerator", "Authority Builder", "Revenue Engine", "Modular Growth Systems", "Full Package", "Specific Service / Custom Module", "Not Sure – Free Diagnostic Call"];

@@ -132,7 +132,8 @@ We build self-sustaining growth infrastructure for founder-led startups and bran
   muted
   loop
   playsInline
-  preload="auto"
+  preload="metadata"
+  poster="/herovideo-poster.png"
   className="w-full aspect-video object-cover opacity-90 rounded-2xl"
 >
   <source src="/herovideo.mp4" type="video/mp4" />

@@ -25,11 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   /* ───────────── BLOG POSTS ───────────── */
   const blogPosts = [
-    "fashion-accelerator",
-    "golf-dtc-brand",
-    "bidet-dtc-brand",
-    "fashion-brand",
-    "top-7-fashion-startup-accelerators-in-India",
+    "ranked-fashion-accelerator-in-under-90-days",
+    "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
+    "why-most-paid-campaigns-fail-attribution-model-roas",
+    "launch-fashion-brand-startup-accelerator",
+    "top-fashion-startup-accelerators-in-india",
   ]; // :contentReference[oaicite:1]{index=1}
 
   return [

@@ -3,12 +3,45 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal"; 
+import type { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Traction Accelerator — 90-Day SEO & Growth System",
+  description:
+    "Fix SEO, conversions, and growth bottlenecks in 90 days. Precrux’s Traction Accelerator helps DTC and Shopify brands gain traffic, improve conversions, and build a strong growth foundation.",
+  alternates: {
+    canonical: "https://precrux.com/services/traction-accelerator",
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Traction Accelerator",
+  description:
+    "A 90-day growth program to fix SEO, conversion, and performance bottlenecks for DTC and Shopify brands, delivering fast improvements in traffic and conversions.",
+  provider: {
+    "@type": "Organization",
+    name: "Precrux",
+    url: "https://precrux.com",
+    sameAs: [
+      "https://www.linkedin.com/company/precrux"
+    ],
+  },
+  areaServed: "Global",
+  serviceType: "SEO, CRO and Growth Optimization",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+  },
+};
 
 
 const faqs = [
   {
     q: "How long does it take to see results with the Traction Accelerator?",
-    a: <>Most clients start seeing measurable improvements in traffic and conversions within the first 30–45 days. By the end of the 90 days, you typically have stronger rankings, higher conversion rates, and clear revenue momentum. Results vary based on your starting point, but the program is built for speed."</>,
+    a: "Most clients start seeing measurable improvements in traffic and conversions within the first 30–45 days. By the end of the 90 days, you typically have stronger rankings, higher conversion rates, and clear revenue momentum. Results vary based on your starting point, but the program is built for speed.",
   },
   {
     q: "What exactly is included in the Traction Accelerator?",
@@ -35,6 +68,19 @@ const faqs = [
     a: "The easiest way is to book a Free Growth Diagnostic call. We’ll review your site, identify your biggest opportunities, and tell you honestly whether the 90-day program is the right fit for you.",
   },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
 
 function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -65,6 +111,14 @@ export default function UIUXPage() {
 
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+/>
       {/* ── 1. Hero — dark, left text + right image ── */}
       <section
         className="pt-[72px] relative overflow-hidden"
@@ -113,7 +167,7 @@ export default function UIUXPage() {
               </h1>
               <div className="block lg:hidden mt-6 mb-6">
   <div className="rounded-2xl overflow-hidden h-[240px]">
-    <img
+    <Image
       src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80"
       alt="Traction Accelerator"
       className="w-full h-full object-cover"

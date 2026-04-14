@@ -3,13 +3,46 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal"; 
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Revenue Engine — Paid Ads, CRO & Scaling System",
+  description:
+    "Build a predictable revenue engine with CRO, paid ads, and full-funnel optimization. Precrux helps DTC and Shopify brands scale revenue with data-driven systems.",
+  alternates: {
+    canonical: "https://precrux.com/services/revenue-engine",
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Revenue Engine",
+  description:
+    "A complete revenue growth system combining CRO, paid advertising, email marketing, and attribution to help DTC and Shopify brands scale predictably.",
+  provider: {
+    "@type": "Organization",
+    name: "Precrux",
+    url: "https://precrux.com",
+    sameAs: [
+      "https://www.linkedin.com/company/precrux"
+    ],
+  },
+  areaServed: "Global",
+  serviceType: "Paid Ads, CRO and Revenue Growth System",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 
 
 const faqs = [
   {
     q: "How long does the Revenue Engine program last and when do I see results?",
-    a: <>The Revenue Engine runs for 6 to 9 months. Most clients start seeing measurable improvements in ROAS, conversions, and revenue within the first 45–60 days. By the end of the program you have a fully built, predictable revenue system with clear attribution and consistent growth.</>,
+    a: "The Revenue Engine runs for 6 to 9 months. Most clients start seeing measurable improvements in ROAS, conversions, and revenue within the first 45–60 days. By the end of the program you have a fully built, predictable revenue system with clear attribution and consistent growth.",
   },
   {
     q: "What exactly is included in the Revenue Engine?",
@@ -41,6 +74,19 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
@@ -70,6 +116,15 @@ export default function UIUXPage() {
 
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+/>
       {/* ── 1. Hero — dark, left text + right image ── */}
       <section
         className="pt-[72px] relative overflow-hidden"
@@ -119,11 +174,15 @@ Revenue Engine
               {/* 📱 Mobile Image (after heading) */}
 <div className="block lg:hidden mt-6 mb-6">
   <div className="rounded-2xl overflow-hidden h-[240px]">
-    <img
-      src="/services/revenue-engine.jpeg"
-      alt="UI/UX Design"
-      className="w-full h-full object-cover"
-    />
+    <Image
+  src="/services/revenue-engine.jpeg"
+  alt="Revenue Engine"
+  width={600}
+  height={300}
+  priority
+  sizes="100vw"
+  className="w-full h-full object-cover"
+/>
   </div>
 </div>
               <p

@@ -13,7 +13,7 @@ const posts = [
     authorImg: "/team/vaibhav.png",
     date: "April 6, 2026",
     img: "/blog/fashion.webp",
-    slug: "fashion-accelerator",
+    slug: "ranked-fashion-accelerator-in-under-90-days",
   },
   {
     category: "Organic Growth",
@@ -22,7 +22,7 @@ const posts = [
     authorImg: "/team/vaibhav.png",
     date: "April 7, 2026",
     img: "/blog/golf.webp",
-    slug: "golf-dtc-brand",
+    slug: "80k-organic-clicks-us-golf-dtc-brand-seo-case-study",
   },
   {
     category: "Performance Marketing",
@@ -31,7 +31,7 @@ const posts = [
     authorImg: "/team/vaibhav.png",
     date: "April 8, 2026",
     img: "/blog/bidet.webp",
-    slug: "bidet-dtc-brand",
+    slug: "why-most-paid-campaigns-fail-attribution-model-roas",
   },
 ];
 function BlogCard({ p }: { p: typeof posts[0] }) {

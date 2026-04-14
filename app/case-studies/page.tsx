@@ -3,6 +3,13 @@ import { useEffect, useState, useRef } from "react";
 import CTASection from "@/components/CTASection";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Case Studies",
+  description:
+    "Real growth case studies from founder-led brands. See how Precrux drives SEO, content, and paid growth results.",
+};
 
 
 const projects = [

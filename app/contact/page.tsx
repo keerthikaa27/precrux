@@ -3,11 +3,18 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Precrux. Tell us your growth goals and we’ll build a clear, actionable strategy to scale your brand.",
+};
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Controlled form state
   const [firstName, setFirstName] = useState("");
@@ -17,8 +24,10 @@ export default function ContactPage() {
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
 
+
   const handleSendMessage = async () => {
     setIsSubmitting(true);
+    setError(null);
     try {
       await fetch("/api/contact", {
         method: "POST",
@@ -27,11 +36,14 @@ export default function ContactPage() {
       });
     } catch (err) {
       console.error("Contact form error:", err);
-    } finally {
+      setError("Something went wrong. Please email us at info@precrux.com");
+      setIsSubmitting(false);
+      return;
+    } 
       setIsSubmitting(false);
       setSubmitted(true);
       window.scrollTo({ top: 400, behavior: "smooth" });
-    }
+    
   };
 
   return (
@@ -101,6 +113,9 @@ export default function ContactPage() {
                 <Reveal>
                 <div className="space-y-6 flex flex-col h-full bg-white rounded-2xl md:rounded-3xl p-4 md:p-8 border border-gray-200 shadow-sm">
                   <h2 className="text-3xl font-bold text-[#0f1117] mb-4 md:mb-8">Send Us a Message</h2>
+                  {error && (
+    <p className="text-red-500 text-sm">{error}</p>
+  )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <input

@@ -30,13 +30,40 @@ export const metadata: Metadata = {
     "Precrux helps ambitious founders scale with high-performance growth systems that drive predictable, compounding revenue.",
 
   keywords: [
-    "growth consultancy",
-    "startup growth",
-    "scaling startups",
-    "growth systems",
-    "business consulting",
-    "founder growth strategy",
-  ],
+  "startup growth consulting",
+  "growth marketing agency for startups",
+  "DTC growth agency",
+  "ecommerce growth agency",
+  "Shopify growth agency",
+  "startup SEO agency",
+  "ecommerce CRO agency",
+  "performance marketing agency for ecommerce",
+  "growth execution accelerator",
+
+  "fashion startup accelerator",
+  "fashion startup accelerator India",
+  "startup accelerator for fashion brands",
+  "fashion growth consulting",
+  "D2C fashion growth consulting",
+  "fashion growth consulting India",
+
+  "startup growth consulting India",
+  "Shopify SEO agency India",
+
+  "startup growth consulting Australia",
+  "DTC growth agency Australia",
+  "performance marketing agency for ecommerce Australia",
+
+  "startup growth consulting USA",
+  "ecommerce growth agency USA",
+  "Shopify growth agency USA",
+  "marketing attribution consulting USA",
+
+  "startup growth consulting UK",
+  "fashion growth consulting UK",
+  "ecommerce growth agency UK",
+  "Shopify SEO agency UK"
+],
 
   authors: [{ name: "Precrux" }],
   creator: "Precrux",
@@ -53,7 +80,7 @@ export const metadata: Metadata = {
     siteName: "Precrux",
     images: [
       {
-        url: "/og-image.png", 
+        url: "https://precrux.com/og-image.png", 
         width: 1200,
         height: 630,
       },
@@ -67,14 +94,20 @@ export const metadata: Metadata = {
     title: "Precrux | Growth Execution Accelerator",
     description:
       "Helping founders scale with predictable growth systems.",
-    images: ["/og-image.png"],
+    images: ["https://precrux.com/og-image.png"],
   },
 
   robots: {
     index: true,
     follow: true,
   },
+
+  alternates: {
+  canonical: "https://precrux.com",
+},
 };
+
+
 
 export default function RootLayout({
   children,
@@ -98,6 +131,21 @@ export default function RootLayout({
     gtag('config', 'G-HPK3L40VCZ');
   `}
 </Script>
+
+<Script id="org-schema" type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Precrux",
+  "url": "https://precrux.com",
+  "logo": "https://precrux.com/logoo.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/precrux"
+  ]
+}
+`}
+</Script>
     <link rel="preload" as="image" href="/logoo.png" />
     <link rel="preload" as="image" href="/download.png" />
   </head>
@@ -105,9 +153,19 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif" }}
       >
         <Navbar />
-        <div style={{ display: "none" }}>
-  <img src="/logoo.png" alt="" />
-  <img src="/download.png" alt="" />
+        <div style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}>
+  <img
+  src="/logoo.png"
+  alt=""
+  fetchPriority="high"
+  decoding="async"
+/>
+  <img
+  src="/download.png"
+  alt=""
+  fetchPriority="high"
+  decoding="async"
+/>
 </div>
         <main>{children}</main>
         <Footer />
