@@ -6,6 +6,8 @@ import BookingModal from "@/components/BookingModal";
 import Image from "next/image";
 
 
+
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",

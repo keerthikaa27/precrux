@@ -97,6 +97,7 @@ function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   );
 }
 
+
 export default function UIUXPage() {
   const [showBooking, setShowBooking] = useState(false);
 

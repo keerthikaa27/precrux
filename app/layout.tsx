@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://precrux.com"),
 
   title: {
-    default: "Precrux | The Growth Execution Accelerator",
+    default: "Precrux | Growth Execution Accelerator for Founders",
     template: "%s | Precrux",
   },
 

@@ -48,7 +48,7 @@ export const posts : Post[] = [
     {
         category: "SEO",
         title: "How We Ranked a Fashion Accelerator #1 for Almost All Core Keywords in Under 90 Days",
-        seoTitle: "How We Ranked a Fashion Accelerator #1 in Under 90 Days",
+        seoTitle: "How We Ranked a Fashion Accelerator #1 in 90 Days | Precrux",
         seoDescription: "See how we ranked a fashion accelerator #1 for core keywords in under 90 days through sharper positioning, keyword ownership, and focused SEO execution.",
         keywords: [
         "fashion accelerator SEO",
@@ -487,7 +487,7 @@ export const posts : Post[] = [
     {
         category: "Organic Growth",
         title: "80K+ Organic Clicks: How We Scaled a Golf DTC Brand from Messy Traffic to Millions of Impressions",
-        seoTitle: "80K+ Organic Clicks: How We Scaled a US Golf DTC Brand",
+        seoTitle: "80K+ Organic Clicks: US Golf DTC SEO Case Study | Precrux",
         seoDescription: "See how we helped a US-based golf DTC brand turn messy organic traffic into 80K+ clicks, 3M+ impressions, and a stronger SEO growth system.",
         keywords: [
         "seo case study",
@@ -908,7 +908,7 @@ export const posts : Post[] = [
     {
         category: "Performance Marketing",
         title: "Why Most Paid Campaigns Fail - And the Attribution Model That 4.2× Our Clients’ ROAS",
-        seoTitle: "Why Most Paid Campaigns Fail: The Attribution Model That 4.2x ROAS",
+        seoTitle: "Why Paid Campaigns Fail: 4.2x ROAS Attribution | Precrux",
         seoDescription: "See why most paid campaigns fail, how attribution distorts ROAS, and the practical model that helped lift a client’s blended ROAS from 2.21x to 4.2x.",
         keywords: [
         "paid campaign attribution",
@@ -1464,7 +1464,7 @@ export const posts : Post[] = [
     {
         category: "Fashion Accelerator",
         title: "The Complete Guide to Launching a Fashion Brand with the Right Fashion Startup Accelerator in India",
-        seoTitle: "The Complete Guide to Launching a Fashion Brand in India (2026)",
+        seoTitle: "How to Launch a Fashion Brand in India (2026) | Precrux",
         seoDescription: "Learn how to launch a fashion brand in India and choose the right fashion startup accelerator for your stage, growth goals, and execution needs.",
         keywords: [
         "fashion startup accelerator in India",
@@ -2036,7 +2036,7 @@ text: "A good sign is that you already have some product direction, brand seriou
     {
         category: "Fashion Accelerator",
         title: "Top 7 Fashion Startup Accelerators In India: What Founders Should Know Before Choosing One (2026 Edition)",
-        seoTitle: "Top 7 Fashion Startup Accelerators in India (2026 Guide)",
+        seoTitle: "Top Fashion Startup Accelerators in India (2026) | Precrux",
         seoDescription: "Explore the top 7 fashion startup accelerators in India for 2026. Compare programs, founder fit, execution support, and what to know before choosing one.",
         keywords: [
         "fashion startup accelerators in India",
@@ -2618,7 +2618,7 @@ text: "Because for many founders the biggest issue is not lack of advice, it is 
     {
   category: "Fashion",
   title: "Fashion Growth Consulting: 7 Game Changing Strategies For D2C Founders",
-  seoTitle: "Fashion Growth Consulting: 7 Strategies for D2C Founders",
+  seoTitle: "Fashion Growth Consulting for D2C Founders | Precrux",
   seoDescription: "Discover 7 fashion growth consulting strategies for D2C founders to improve positioning, conversion, retention, authority, and long-term brand growth.",
   keywords: [
     "fashion growth consulting",
